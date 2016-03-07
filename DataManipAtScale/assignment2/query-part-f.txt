@@ -1,0 +1,9 @@
+SELECT docid, count(*)
+FROM(
+     SELECT docid, term
+     FROM Frequency
+     WHERE term = 'transactions'
+     OR term = 'world')
+GROUP BY docid
+HAVING count(*) > 1;
+    

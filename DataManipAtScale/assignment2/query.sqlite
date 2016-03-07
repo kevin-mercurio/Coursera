@@ -1,0 +1,9 @@
+SELECT  SUM(a.count*b.count)
+FROM (SELECT *
+     FROM Frequency
+     WHERE docid = '17035_txt_earn'
+     OR docid = '10080_txt_crude') as a
+JOIN Frequency as b
+ON a.term = b.term
+WHERE a.docid = '17035_txt_earn'
+AND b.docid = '10080_txt_crude';
